@@ -22,24 +22,24 @@ import { get_file_data } from "@/utils/file_system";
 //   return data;
 // };
 
-const getPreviewCode = async (
-  component: string,
-  category: string,
-  variants: { tsx: boolean; jsx: boolean }
-) => {
-  const res = await fetch(`http://localhost:3000/api/cmp-code`, {
-    cache: "no-store",
-    method: "POST",
-    body: JSON.stringify({ component, category, variants }),
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-  });
+// const getPreviewCode = async (
+//   component: string,
+//   category: string,
+//   variants: { tsx: boolean; jsx: boolean }
+// ) => {
+//   const res = await fetch(`http://localhost:3000/api/cmp-code`, {
+//     cache: "no-store",
+//     method: "POST",
+//     body: JSON.stringify({ component, category, variants }),
+//     headers: {
+//       "Content-Type": "application/json",
+//       Accept: "application/json",
+//     },
+//   });
 
-  const data = await res.json();
-  return data;
-};
+//   const data = await res.json();
+//   return data;
+// };
 
 export const generateMetadata = ({ params }: { params: { cmp: string } }) => {
   const data = ComponentDataArray.find(
@@ -81,15 +81,11 @@ const page = async ({ params }: { params: { cmp: string } }) => {
               CmpUrl(elem.title)
             );
             console.log(usageCode)
-            const previewCode = await getPreviewCode(
-              CmpUrl(elem.title),
-              CmpUrl(resCmp.name),
-              elem.variants
-            );
+            
             return (
               <ComponentInfo
                 key={index}
-                component_code={previewCode.message}
+                component_code={{jsxCode: '', tsxCode: ''}}
                 component_name={elem.title}
                 component_preview={<elem.component />}
                 component_details={elem.details}
