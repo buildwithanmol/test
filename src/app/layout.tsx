@@ -3,7 +3,7 @@ import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     "Discover Dev Components, a unique platform offering a wide range of fully customizable and functional web components. Enhance your web development experience with our ready-to-use, highly flexible UI elements.",
   keywords:
     "web components, custom components, react components, UI components, web development, front-end development, customizable components, functional components, custom web design, reusable components, open-source components",
-  themeColor: "#1E293B",
   // twitterTitle: "Dev Components - Fully Customizable Web Components",
   // twitterDescription:
   //   "Discover Dev Components, a unique platform offering a wide range of fully customizable and functional web components. Enhance your web development experience with our ready-to-use, highly flexible UI elements.",
@@ -22,6 +21,10 @@ export const metadata: Metadata = {
   // twitterSite: "@your-twitter-handle",
   // twitterCreator: "@your-twitter-handle",
 };
+
+export const viewport: Viewport = {
+  themeColor: '#1e293b',
+}
 
 export default function RootLayout({
   children,

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import DevRadio from "../../../../public/preview-components/tsx-preview/radios/dev-radio";
+import DevRadio from "../../preview-components/tsx-preview/radios/dev-radio";
 
 const DevRadioUsage = () => {
   const [radioValue, setRadioValue] = useState("Male");

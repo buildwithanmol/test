@@ -1,4 +1,4 @@
-import RadiosInfo from "../app/usage-components/radios/radios-info"
+import RadiosInfo from "../../public/usage-components/radios/radios-info"
 
 const ComponentDataArray = [
 
